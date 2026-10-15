@@ -3,5 +3,6 @@ __pycache__/
 .DS_Store
 frontend/node_modules/
 frontend/dist/
+frontend/*.tsbuildinfo
 .venv/
 .pytest_cache/
