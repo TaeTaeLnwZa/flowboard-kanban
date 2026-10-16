@@ -2,6 +2,8 @@
 
 A public, shared Kanban board with **To do**, **Doing**, and **Done** columns. Visitors can add, move, edit, and delete cards. The frontend is React + TypeScript + Vite, the API is Python FastAPI, and cards are stored in Supabase PostgreSQL.
 
+**Live app:** https://flowboard-kanban-8b3y.onrender.com
+
 ## Run locally
 
 1. Create a Supabase project and run [`supabase/schema.sql`](supabase/schema.sql) in its SQL Editor.
@@ -27,12 +29,14 @@ Open <http://127.0.0.1:5173>. Vite proxies `/api` requests to FastAPI. The app r
 
 ## Deploy for free on Render
 
-The `render.yaml` Blueprint runs the frontend and FastAPI backend together as
-one free Docker web service. Create a Render account, connect this repository as
-a Blueprint, and provide `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` when
-prompted. No payment method is needed for the Free web service. Render supplies
+The `render.yaml` Blueprint defines the frontend and FastAPI backend together as
+one free Docker web service. Create a Render account and deploy this public Git
+repository as a Web Service using its Dockerfile, selecting the **Free** compute
+plan. Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` as environment variables
+in Render. No payment method is needed for the Free web service. Render supplies
 `PORT` automatically. Free services spin down after 15 minutes without traffic,
-so the first visit after a pause can take about a minute to load.
+so the first visit after a pause can take about a minute to load. Services
+created from a public repository URL require manual redeployment after updates.
 
 ## Deploy to Cloud Run
 
