@@ -25,6 +25,15 @@ A public, shared Kanban board with **To do**, **Doing**, and **Done** columns. V
 
 Open <http://127.0.0.1:5173>. Vite proxies `/api` requests to FastAPI. The app refreshes the shared board every 12 seconds.
 
+## Deploy for free on Render
+
+The `render.yaml` Blueprint runs the frontend and FastAPI backend together as
+one free Docker web service. Create a Render account, connect this repository as
+a Blueprint, and provide `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` when
+prompted. No payment method is needed for the Free web service. Render supplies
+`PORT` automatically. Free services spin down after 15 minutes without traffic,
+so the first visit after a pause can take about a minute to load.
+
 ## Deploy to Cloud Run
 
 The `Dockerfile` builds the Vite app, then serves it and the API from one Cloud Run service. Set only these runtime environment variables in Cloud Run:
